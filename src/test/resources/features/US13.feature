@@ -1,6 +1,6 @@
 Feature: Kullanici BestBuyAssertions anasayfasinda logo ve link gorunurlugunu test eder
 
-  @wip
+
   Scenario:TC19 Kullanici title'da verilen degerin icermedigini test eder
 
 

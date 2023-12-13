@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.BestBuyPage;
@@ -28,4 +29,6 @@ public class BestBuyStepdefinitions {
     public void fransizca_linkinin_goruntulendigini_test_eder() {
         Assert.assertTrue(bestBuyPage.francaisLink.isDisplayed());
     }
+
+
 }
