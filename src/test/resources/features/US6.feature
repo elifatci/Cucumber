@@ -1,4 +1,4 @@
-Feature: US1006 Faker Class'i ile Facebook kayit testi
+Feature: US6 Faker Class'i ile Facebook kayit testi
 
 
   Scenario: TC12 Fake bilgilerle facebook'a kayit yapilabilmeli

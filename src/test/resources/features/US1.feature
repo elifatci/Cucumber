@@ -1,4 +1,4 @@
-Feature: US1001 Kullanici testotomasyonu sayfasinda arama yapar
+Feature: US1 Kullanici testotomasyonu sayfasinda arama yapar
 
   Scenario: TC01_ Kullanici phone aramasinda sonuc bulmalidir
     Given kullanici testotomasyonu anasayfaya gider

@@ -1,4 +1,4 @@
-Feature:US1005 Kullanici yanlis bilgilerle giris yapamaz
+Feature:US5 Kullanici yanlis bilgilerle giris yapamaz
 
 
   Scenario: TC09 Kullanici gecerliEmail ve gecersizPassword ile giris yapamamali

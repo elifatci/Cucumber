@@ -3,15 +3,24 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.TestOtomasyonuPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class TestotomasyonuStepdefinitions {
 
     TestOtomasyonuPage testOtomasyonuPage=new TestOtomasyonuPage();
+    Sheet sayfa2;
+    int ActualurunStokMiktari;
 
     @Given("kullanici testotomasyonu anasayfaya gider")
     public void kullanici_testotomasyonu_anasayfaya_gider() {
@@ -114,4 +123,42 @@ public class TestotomasyonuStepdefinitions {
 
     }
 
+    @Then("stok excelindeki {string} daki urunun stok miktarini bulur")
+    public void stokExcelindekiDakiUrununStokMiktariniBulur(String satirNo) {
+        String dosyaYolu="src/test/resources/stok.xlsx";
+        Workbook workbook;
+        try {
+            FileInputStream fis=new FileInputStream(dosyaYolu);
+            workbook = new XSSFWorkbook(fis);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+        sayfa2=workbook.getSheet("Sayfa2");
+       String SatirUrunIsmi=sayfa2.getRow(Integer.parseInt(satirNo)-1).getCell(0).toString();
+
+       testOtomasyonuPage.aramaKutusu.sendKeys(SatirUrunIsmi+Keys.ENTER);
+       ActualurunStokMiktari=testOtomasyonuPage.bulunanUrunElementleriList.size();
+
+    }
+
+    @And("stok miktarinin {string} da verilen stok miktarindan fazla oldugunu test eder")
+    public void stokMiktarininDaVerilenStokMiktarindanFazlaOldugunuTestEder(String verilenSatir) {
+        String dosyaYolu="src/test/resources/stok.xlsx";
+        Workbook workbook;
+        try {
+            FileInputStream fis=new FileInputStream(dosyaYolu);
+            workbook = new XSSFWorkbook(fis);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+
+        }
+        sayfa2=workbook.getSheet("Sayfa2");
+        String minStokMiktariStr=sayfa2.getRow(Integer.parseInt(verilenSatir)-1)
+                                  .getCell(1)
+                                  .toString();
+
+        int minStokMiktari= (int) Double.parseDouble(minStokMiktariStr);
+        Assert.assertTrue(ActualurunStokMiktari>minStokMiktari);
+    }
 }

@@ -1,11 +1,11 @@
-Feature: US1007 Kullanicinin alisveris sepetine ekledigi urun testi
+Feature: US7 Kullanicinin alisveris sepetine ekledigi urun testi
 
 
   Scenario: TC13 sepete dogru urun eklenmeli
 
     Given kullanici "sauceUrl" anasayfaya gider
     And 2 saniye bekler
-    Then saucedemo username kutusuna "standard_use" yazar
+    Then saucedemo username kutusuna "standard_user" yazar
     And saucedemo password kutusuna "secret_sauce" yazar
     And 2 saniye bekler
     Then saucedemo login tusuna basar

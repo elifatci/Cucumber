@@ -1,4 +1,4 @@
-Feature: US1003 Kullanici bastaki ortak adimlari tek sefer yazabilmeli
+Feature: US3 Kullanici bastaki ortak adimlari tek sefer yazabilmeli
 
   Background: baslangictaki ortak adimlar buraya yazilabilir
     Given kullanici "toUrl" anasayfaya gider

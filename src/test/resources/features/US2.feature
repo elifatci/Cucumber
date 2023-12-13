@@ -1,4 +1,4 @@
-Feature: US1002 Kullanici parametre ile verdigi urunu aratabilmeli
+Feature: US2 Kullanici parametre ile verdigi urunu aratabilmeli
 
   Scenario: TC04 Kullanici java arattiginda sonuc bulamamali
     Given kullanici testotomasyonu anasayfaya gider
