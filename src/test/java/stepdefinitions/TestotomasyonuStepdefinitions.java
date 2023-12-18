@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import pages.TestOtomasyonuPage;
 import utilities.ConfigReader;
@@ -160,5 +161,37 @@ public class TestotomasyonuStepdefinitions {
 
         int minStokMiktari= (int) Double.parseDouble(minStokMiktariStr);
         Assert.assertTrue(ActualurunStokMiktari>minStokMiktari);
+    }
+
+    @Given("{string} anasayfaya gidin")
+    public void anasayfaya_gidin(String url) {
+        Driver.getDriver().get(ConfigReader.getProperty("toUrl"));
+    }
+    @Given("arama kutusuna phone yazip ENTER tusuna basin")
+    public void arama_kutusuna_phone_yazip_enter_tusuna_basin() {
+        testOtomasyonuPage.aramaKutusu.sendKeys(ConfigReader.getProperty("toAranacakKelime")+Keys.ENTER);
+    }
+    @Then("Listelenen sonuclardan ilkini tiklayin")
+    public void listelenen_sonuclardan_ilkini_tiklayin() {
+        testOtomasyonuPage.bulunanUrunElementleriList.get(0).click();
+    }
+    @Then("urunu sepete ekleyin")
+    public void urunu_sepete_ekleyin() {
+        JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click()",testOtomasyonuPage.addToCartLink);
+
+    }
+    @Then("your cart linkine tiklayin")
+    public void your_cart_linkine_tiklayin() {
+        testOtomasyonuPage.yourCartLink.click();
+    }
+    @Then("sepetteki urun isminin case sensitive olmadan iphone icerdigini test edin")
+    public void sepetteki_urun_isminin_case_sensitive_olmadan_iphone_icerdigini_test_edin() {
+        String actualUrunIsmi=testOtomasyonuPage.sepettekiUrunIsmi.getText().toLowerCase();
+        Assert.assertTrue("Sepete eklediginiz urun istenilen kelimeyi icermemektedir",actualUrunIsmi.contains("iphone"));
+    }
+    @Then("sayfayi kapatin")
+    public void sayfayi_kapatin() {
+        Driver.closeDriver();
     }
 }
