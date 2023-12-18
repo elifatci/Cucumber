@@ -192,6 +192,40 @@ public class TestotomasyonuStepdefinitions {
     }
     @Then("sayfayi kapatin")
     public void sayfayi_kapatin() {
+
         Driver.closeDriver();
     }
+
+    @Given("login account linkine tiklar")
+    public void login_account_linkine_tiklar() {
+        testOtomasyonuPage.accountLinki.click();
+    }
+    @Then("Mail kutusuna gecerli mail girer")
+    public void mail_kutusuna_gecerli_mail_girer() {
+       testOtomasyonuPage.emailKutusu.sendKeys(ConfigReader.getProperty("toGecerliEmail"));
+    }
+    @Then("Sifre kutusuna gecersiz sifre girer")
+    public void sifre_kutusuna_gecersiz_sifre_girer() {
+      testOtomasyonuPage.passwordKutusu.sendKeys(ConfigReader.getProperty("toGecersizPassword"));
+    }
+    @Then("login tusuna basar")
+    public void login_tusuna_basar() {
+       testOtomasyonuPage.loginButonu.click();
+    }
+    @Then("Basarili bir sekilde giris yapilamadigini test eder")
+    public void basarili_bir_sekilde_giris_yapilamadigini_test_eder() {
+       Assert.assertTrue("Sisteme yanlis bilgilerle giris yapildi",testOtomasyonuPage.wrongLoginText.isDisplayed());
+    }
+
+    @Then("Mail kutusuna gecersiz mail girer")
+    public void mailKutusunaGecersizMailGirer() {
+        testOtomasyonuPage.emailKutusu.sendKeys(ConfigReader.getProperty("toGecersizEmail"));
+    }
+
+    @Then("Sifre kutusuna gecerli sifre girer")
+    public void sifreKutusunaGecerliSifreGirer() {
+        testOtomasyonuPage.passwordKutusu.sendKeys(ConfigReader.getProperty("toGecerliPassword"));
+    }
 }
+
+

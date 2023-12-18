@@ -1,6 +1,6 @@
 Feature:US14 Arama sonucu bulunup sepete eklenen urun ismi ile sepetteki urun ayni isme sahip olmali
 
-  @wip
+
   Scenario:TC20 Kullanici urun aratip urunu sepete ekledikten sonra sepetteki urun ismi ayni oldugunu dogrulamali
 
 

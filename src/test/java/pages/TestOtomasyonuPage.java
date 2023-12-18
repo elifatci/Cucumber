@@ -36,6 +36,9 @@ public class TestOtomasyonuPage {
     @FindBy(id = "submitlogin")
     public WebElement loginButonu;
 
+    @FindBy(className = "text-white")
+    public WebElement wrongLoginText;
+
     @FindBy(xpath = "//span[text()='Logout']")
     public WebElement logoutLinki;
 
