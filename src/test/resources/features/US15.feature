@@ -1,7 +1,7 @@
-Feature: Kullanici yanlis bilgilerle sisteme giris yapamaz
+Feature:US15 Kullanici yanlis bilgilerle sisteme giris yapamaz
 
 
-  @wip
+
   Scenario: TC21 Kullanici gecerli mail gecersiz sifre ile giris yapamamali
 
 
@@ -13,7 +13,6 @@ Feature: Kullanici yanlis bilgilerle sisteme giris yapamaz
     Then Basarili bir sekilde giris yapilamadigini test eder
     Then sayfayi kapatir
 
-  @wip
   Scenario: TC22 Kullanici gecersiz mail gecerli sifre ile giris yapamamali
     Given  kullanici "toUrl" anasayfaya gider
     And  login account linkine tiklar
@@ -23,7 +22,6 @@ Feature: Kullanici yanlis bilgilerle sisteme giris yapamaz
     Then Basarili bir sekilde giris yapilamadigini test eder
     Then sayfayi kapatir
 
-  @wip
   Scenario: TC23 Kullanici gecersiz mail gecersiz sifre ile giris yapamamali
     Given  kullanici "toUrl" anasayfaya gider
     And  login account linkine tiklar

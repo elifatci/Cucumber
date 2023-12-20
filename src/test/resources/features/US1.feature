@@ -1,6 +1,7 @@
 Feature: US1 Kullanici testotomasyonu sayfasinda arama yapar
 
   Scenario: TC01_ Kullanici phone aramasinda sonuc bulmalidir
+
     Given kullanici testotomasyonu anasayfaya gider
     Then arama kutusuna phone yazip ENTER tusuna basar
     And arama sonucunda urun bulunabildigini test eder

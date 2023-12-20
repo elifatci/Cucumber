@@ -1,0 +1,11 @@
+
+
+    * File ===> New => Project => Name => Java=> Select maven => create
+    * Selenium-java, webdrivermanager, cucumber java, cucumber junit
+    * .feature uzantılı bir Gherkin dosyası
+    * Given-When-And-Then
+    * none-technical kişiler && teknik kişiler
+    * Runner classi==>@RunWith(Cucumber.class)/ @CucumberOptions(plugin-features-glue-tags-dryRun)
+    * stepdefinitions
+    * Background
+    * Scenario Outline

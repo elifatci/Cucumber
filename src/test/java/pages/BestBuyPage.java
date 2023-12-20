@@ -9,8 +9,7 @@ import java.util.List;
 
 public class BestBuyPage {
 
-    public BestBuyPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public BestBuyPage(){PageFactory.initElements(Driver.getDriver(),this);
     }
 
     @FindBy(className = "logo")
