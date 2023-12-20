@@ -26,7 +26,7 @@ public class EditorPage {
     @FindBy(xpath = "//*[@type='search']")
     public WebElement newSearchButton;
 
-    @FindBy(xpath = "//tr/td[2]")
-    public List<WebElement> bulunanIsimler;
+    @FindBy(xpath = "(//*[@class='sorting_1'])[1]")
+    public WebElement bulunanIsimler;
 
 }

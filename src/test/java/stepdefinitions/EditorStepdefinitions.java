@@ -62,10 +62,7 @@ public class EditorStepdefinitions {
     }
     @Then("isim bolumunde isminin oldugunu dogrular")
     public void isim_bolumunde_isminin_oldugunu_dogrular() {
-
-        System.out.println(ReusableMethods.strListeOlustur(editorPage.bulunanIsimler));
-
-        Assert.assertTrue("İsim bolumunde isminin oldugu dogrulanamadi",ReusableMethods.strListeOlustur(editorPage.bulunanIsimler).contains(firstName));
+        Assert.assertTrue("İsim bolumunde isminin oldugu dogrulanamadi",editorPage.bulunanIsimler.getText().contains(firstName));
 
     }
 
