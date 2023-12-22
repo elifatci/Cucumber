@@ -1,7 +1,7 @@
 Feature:US16 Onerilen urunler sepete eklenmeli
 
 
-  @wip
+
   Scenario:TC24 Sepete eklenen urunlerin sepette oldugu dogrulanmali
 
 
