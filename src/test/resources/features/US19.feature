@@ -1,7 +1,6 @@
 Feature:US19 Kullanici ilgili sayfaya gider ve alerti test eder
 
 
-  @wip
   Scenario:TC27 Kullanici demoqa sayfasina gider cikan cıkan alertin gorunur oldugunu dogrular ve alert textini dogrular
 
     * "demoUrl" adresine gidin

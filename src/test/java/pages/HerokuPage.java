@@ -19,4 +19,11 @@ public class HerokuPage {
 
     @FindBy(xpath = "//h3")
     public WebElement addRemoveElementYazisi;
+
+
+    @FindBy(xpath = "(//*[@type='checkbox'])[1]")
+    public WebElement checkbox1;
+
+    @FindBy(xpath = "(//*[@type='checkbox'])[2]")
+    public WebElement checkbox2;
 }
