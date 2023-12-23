@@ -1,7 +1,7 @@
 Feature:US18 Demoqa anasyafasinda butonlarin gorunur oldugunu test etme
 
 
-  @wip
+
   Scenario:TC26 Kullanci anasayfaya gider ve after 5 seconds butonunun gorunur olamsini bekler gorunur oldgunu test eder
 
 

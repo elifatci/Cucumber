@@ -13,4 +13,17 @@ public class DemoqaPage {
 
         @FindBy(id = "visibleAfter")
     public WebElement visibleAfterFive;
+
+    @FindBy(xpath = "(//*[@class='header-text'])[3]")
+    public WebElement alertsFrameLink;
+
+    @FindBy(xpath = "//*[text()='Alerts']")
+    public WebElement alertsLink;
+
+
+    @FindBy(id = "timerAlertButton")
+    public WebElement alertWillAppearClickMe;
+
+
+
 }
