@@ -1,7 +1,7 @@
 Feature:US20 Kullanici ilgili sayfaya gider checkboxlari test eder
 
 
-  @wip
+
   Scenario:TC28 Kullancii checkbox1 ve checkbox2 elementlerini secer ve secili olduklarini goruntuler
 
 
