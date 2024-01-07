@@ -1,6 +1,5 @@
 Feature:Verify easy bus ticket text
 
-  @wip
   Scenario:Verify easy bus ticket text
 
   * Go to url "easyBusUrl"

@@ -2,8 +2,10 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.asserts.SoftAssert;
 import pages.EasyBusPage;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -11,6 +13,8 @@ import utilities.Driver;
 public class EasyBusStepdefinitions {
     Actions actions=new Actions(Driver.getDriver());
     EasyBusPage easyBusPage=new EasyBusPage();
+
+    SoftAssert softAssert=new SoftAssert();
 
     @Given("Go to url {string}")
     public void go_to_url(String string) {
@@ -39,6 +43,22 @@ public class EasyBusStepdefinitions {
     public void verify_that_page_is_scrolled_up_and_text_is_visible_on_screen(String string) {
             Assert.assertTrue(easyBusPage.headerLogo.isDisplayed());
             Assert.assertTrue(easyBusPage.everyJourneyText.isDisplayed());
+    }
+
+    @Given("Verify the section of Our Testimonials is visible")
+    public void verify_the_section_of_our_testimonials_is_visible() {
+        softAssert.assertTrue(easyBusPage.ourTestimonials.isDisplayed());
+
+    }
+    @Given("Click on the second item from our testimonials")
+    public void click_on_the_second_item_from_our_testimonials() {
+        JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();",easyBusPage.aprilouTestimonials);
+
+    }
+    @Given("Verify 'Marvan's comment' is visible")
+    public void verify_marvan_s_comment_is_visible() {
+        softAssert.assertTrue(easyBusPage.aprilComment.isDisplayed());
     }
 
 }

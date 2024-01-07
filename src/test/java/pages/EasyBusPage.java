@@ -19,4 +19,16 @@ public class EasyBusPage {
 
     @FindBy(xpath = "(//*[@class='title'])[2]")
     public WebElement everyJourneyText;
+
+    @FindBy(xpath = "(//*[@class='container'])[6]")
+    public WebElement ourTestimonials;
+
+    @FindBy(xpath = "(//*[@role='tab'])[2]")
+    public WebElement aprilouTestimonials;
+
+
+    @FindBy(xpath = "(//*[@class='content'])[7]")
+    public WebElement aprilComment;
+
+
 }
