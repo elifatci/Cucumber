@@ -1,6 +1,5 @@
 Feature:Negative username test
 
-  @wip
   Scenario:Negative Test
 
   * Open page

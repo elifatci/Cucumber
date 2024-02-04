@@ -58,4 +58,17 @@ public class ExerciseStepdefinitions {
         String actualText=exercisePage.textError.getText();
         softAssert.assertEquals(actualText,expectedText);
     }
+
+
+    @Given("Type password incorrectPassword into Password field")
+    public void type_password_incorrect_password_into_password_field() {
+      exercisePage.textBoxPassword.sendKeys("incorrectPassword");
+    }
+    @Given("Verify error message text is Your password is invalid!")
+    public void verify_error_message_text_is_your_password_is_invalid() {
+    String expectedText="Your password is invalid!";
+    String actualText=exercisePage.textError.getText();
+    softAssert.assertEquals(actualText,expectedText);
+    }
+
 }
