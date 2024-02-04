@@ -25,4 +25,8 @@ public class ExercisePage {
     @FindBy(linkText = "Log out")
     public WebElement buttonLogout;
 
+    @FindBy(css = "#error")
+    public WebElement textError;
+
+
 }

@@ -1,6 +1,5 @@
 Feature:Positive Login Test
 
-  @wip
   Scenario:Smoke Test
 
     * Open page

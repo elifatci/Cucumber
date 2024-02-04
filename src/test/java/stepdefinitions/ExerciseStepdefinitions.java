@@ -5,7 +5,7 @@ import org.testng.asserts.SoftAssert;
 import pages.ExercisePage;
 import utilities.Driver;
 
-public class Exercise {
+public class ExerciseStepdefinitions {
 
     ExercisePage exercisePage=new ExercisePage();
     SoftAssert softAssert=new SoftAssert();
@@ -41,5 +41,21 @@ public class Exercise {
     @Given("Verify button Log out is displayed on the new page")
     public void verify_button_log_out_is_displayed_on_the_new_page() {
         softAssert.assertTrue(exercisePage.buttonLogout.isDisplayed());
+    }
+
+    @Given("Type username incorrectUser into Username field")
+    public void type_username_incorrect_user_into_username_field() {
+        exercisePage.textBoxUsername.sendKeys("incorrectUser");
+    }
+    @Given("Verify error message is displayed")
+    public void verify_error_message_is_displayed() {
+        softAssert.assertTrue(exercisePage.textError.isDisplayed());
+    }
+    @Given("Verify error message text is Your username is invalid!")
+    public void verify_error_message_text_is_your_username_is_invalid() {
+
+        String expectedText="Your username is invalid!";
+        String actualText=exercisePage.textError.getText();
+        softAssert.assertEquals(actualText,expectedText);
     }
 }
