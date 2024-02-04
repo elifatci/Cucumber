@@ -1,6 +1,5 @@
 Feature:Verify section of Our Testimonials
 
-  @wip
   Scenario:the section of our testimonials is visible
 
     * Go to url "https://qa.easybusticket.com/"
